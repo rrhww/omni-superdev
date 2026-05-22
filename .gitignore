@@ -4,3 +4,7 @@ Thumbs.db
 
 # Local archives or exports
 *.zip
+
+# Python cache
+__pycache__/
+*.pyc
