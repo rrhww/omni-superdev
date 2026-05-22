@@ -1,26 +1,26 @@
-# Release Checklist
+# 发布检查清单
 
-Use this checklist before publishing the Omni SuperDev suite to GitHub.
+在把 Omni SuperDev suite 发布到 GitHub 之前，可以按这份清单做最后确认。
 
-## Required
+## 必查项
 
-- [ ] Confirm the root [LICENSE](../LICENSE) matches how you want to publish your Omni SuperDev wrapper content
-- [ ] Keep bundled third-party license files inside each bundled skill directory
-- [ ] Keep [third-party.md](./third-party.md) with the upstream attribution list
-- [ ] Copy the full `skills/` directory contents when documenting installation
-- [ ] Keep `skills/_shared/` next to `skills/brooks-review/`
-- [ ] Make sure no local/private paths or private project notes remain in README/docs
+- [ ] 确认根目录 [LICENSE](../LICENSE) 符合你希望公开发布 Omni SuperDev 包装层内容的方式
+- [ ] 确认每个已打包第三方 skill 目录中的许可证文件仍然保留
+- [ ] 确认 [third-party.md](./third-party.md) 中的上游来源与归属说明仍然准确
+- [ ] 确认安装说明里强调的是复制完整 `skills/` 目录内容
+- [ ] 确认 `skills/_shared/` 与 `skills/brooks-review/` 保持同级
+- [ ] 确认 README 与 docs 中没有残留本地路径、私有项目说明或无关上下文
 
-## Nice To Check
+## 建议检查
 
-- [ ] Open [README.md](../README.md) and confirm the installation story is clear
-- [ ] Open [install.md](./install.md) and confirm the final folder structure matches the repo
-- [ ] Spot-check `skills/omni-superdev/SKILL.md` after any routing edits
-- [ ] Run a quick script smoke test for `ui-ux-pro-max`, `webapp-testing`, and `gh-fix-ci`
+- [ ] 打开 [README.md](../README.md) 看一遍首页说明是否清晰
+- [ ] 打开 [install.md](./install.md) 确认安装结构与当前仓库一致
+- [ ] 在改动路由后，抽查 `skills/omni-superdev/SKILL.md`
+- [ ] 对 `ui-ux-pro-max`、`webapp-testing`、`gh-fix-ci` 做一次轻量脚本冒烟验证
 
-## Suggested First GitHub Release Notes
+## 首个 Release 可直接使用的说明方向
 
-- Self-contained Omni SuperDev suite
-- Based on and adapted from the Superpowers workflow model
-- Bundles common specialty skills so users do not need extra skill installs
-- Includes third-party attribution and per-skill bundled license files
+- 一套可直接安装的 Omni SuperDev 自包含 skill suite
+- 基于 `Superpowers` 工作流模型改造
+- 已打包常用专项 skills，用户不需要再额外安装 companion skills
+- 已附带第三方来源说明与各 skill 对应许可证文件

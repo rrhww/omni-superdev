@@ -1,21 +1,21 @@
-# License Notice
+# 许可证说明
 
-This repository now bundles several third-party skills, and each bundled third-party component keeps its own included license text inside the corresponding skill directory.
+当前仓库打包了若干第三方 skill，每个第三方组件都在对应目录中保留了自己的许可证文本。
 
-See [docs/third-party.md](./docs/third-party.md) for the bundled component list and attribution notes.
+第三方来源与归属说明见 [docs/third-party.md](./docs/third-party.md)。
 
-## Repository License
+## 仓库顶层许可证
 
-The repository now includes a top-level [LICENSE](./LICENSE) file for the original Omni SuperDev wrapper/router content and repository-level packaging/docs.
+当前仓库已经包含顶层 [LICENSE](./LICENSE) 文件，用于约束 Omni SuperDev 自身的路由/包装内容，以及仓库级的打包与文档整理内容。
 
-## Third-Party Components
+## 第三方组件
 
-Bundled third-party skills keep their own included license files inside the corresponding skill directories.
+已打包的第三方 skill 仍然分别保留各自的许可证文件。
 
-That means this repository contains a mix of:
+也就是说，这个仓库当前同时包含：
 
-- your Omni SuperDev router/wrapper skill content
-- repository-level packaging/docs under the root MIT license
-- third-party bundled skill content under each bundled component's own license
+- Omni SuperDev 自身的路由与包装内容
+- 受根目录 MIT 许可证约束的仓库级文档与打包整理内容
+- 受各自原始许可证约束的第三方 skill 内容
 
-Read [docs/third-party.md](./docs/third-party.md) before redistributing or repackaging the suite.
+如果你准备再次分发、改包或复用其中内容，请先阅读 [docs/third-party.md](./docs/third-party.md)。
