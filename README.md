@@ -1,22 +1,22 @@
 # Omni SuperDev
 
-Omni SuperDev is a self-contained skill suite for full-cycle software and product development.
+Omni SuperDev 是一套面向全流程软件与产品开发的自包含 skill suite。
 
-It is based on and adapted from the Superpowers discipline model, but it is packaged here as one installable suite so users do not need to separately install the common companion skills.
+它基于 `Superpowers` 的工程纪律模型改造而来，但发布形态不是“主 skill + 一堆额外依赖”的方式，而是直接打包成一套可安装、可分发的完整技能集合，用户不需要再单独安装常见 companion skills。
 
-## Positioning
+## 定位
 
-You can think of the suite like this:
+你可以把这套 skill 理解成：
 
-- `omni-superdev` is the main router
-- `omni-tdd`, `omni-debug`, `omni-verify`, and `omni-file-planning` provide the suite's lightweight built-in discipline layer
-- bundled specialty skills provide deeper coverage for UI/UX, local web QA, MCP work, PR/CI work, code review, and persistent planning
+- `omni-superdev` 负责总流程路由
+- `omni-tdd`、`omni-debug`、`omni-verify`、`omni-file-planning` 提供套件自带的轻量纪律层
+- 已打包的专项 skills 负责补足 UI/UX、本地 Web 测试、MCP、PR/CI、代码评审、持久化规划等能力
 
-That makes Omni SuperDev a good default entry point for software and product work that may span backend, frontend, UI, testing, PR/CI, or MCP.
+这让 Omni SuperDev 很适合作为软件与产品工作的默认入口，尤其适用于可能横跨后端、前端、UI、测试、PR/CI、MCP 的混合型任务。
 
-## Bundled Skills
+## 已内置 Skills
 
-Core Omni skills:
+核心 Omni skills：
 
 - `omni-superdev`
 - `omni-tdd`
@@ -24,7 +24,7 @@ Core Omni skills:
 - `omni-verify`
 - `omni-file-planning`
 
-Bundled specialty skills:
+已打包的专项 skills：
 
 - `planning-with-files`
 - `ui-ux-pro-max`
@@ -33,33 +33,33 @@ Bundled specialty skills:
 - `gh-fix-ci`
 - `gh-address-comments`
 - `brooks-review`
-- `_shared` support files required by `brooks-review`
+- `_shared`（`brooks-review` 依赖的支持文件）
 
-## Typical Routing
+## 典型路由方式
 
-- Small task: inspect, patch, verify, summarize
-- Standard development: clarify product intent, sketch the technical approach, use TDD for behavior changes, implement, simplify, verify
-- Complex or multi-session work: use persisted planning, then execute in phases
-- Debug or failing tests: start with root-cause-first debugging before proposing fixes
-- UI/UX: route to `ui-ux-pro-max`
-- Local web QA: route to `webapp-testing`
-- MCP work: route to `mcp-builder`
-- PR or CI work: route to `gh-fix-ci`, `gh-address-comments`, or `brooks-review`
+- 小任务：查看、修改、验证、总结
+- 标准开发：澄清产品目标，梳理技术方案，对行为变更走 TDD，再实现、收敛、验证
+- 复杂任务或跨会话任务：先做持久化规划，再按阶段推进
+- 调试或测试失败：先做根因导向的调试，再决定修复方案
+- UI/UX：路由到 `ui-ux-pro-max`
+- 本地 Web QA：路由到 `webapp-testing`
+- MCP 工作流：路由到 `mcp-builder`
+- PR / CI 工作流：路由到 `gh-fix-ci`、`gh-address-comments` 或 `brooks-review`
 
-## Installation
+## 安装方式
 
-See [docs/install.md](./docs/install.md).
+详见 [docs/install.md](./docs/install.md)。
 
-In short, copy this repository's [`skills/`](./skills) directory contents into a Codex-visible skills location and preserve the directory structure.
+简而言之，把当前仓库中的 [`skills/`](./skills) 目录内容整体复制到 Codex 可发现的 skills 目录中，并保留原有目录结构。
 
-Common target locations:
+常见安装位置：
 
 - `~/.agents/skills/`
-- another project or personal skills directory used by your environment
+- 你当前环境支持的项目级或个人级 skills 目录
 
-## What "No Extra Install" Means
+## “不需要额外安装” 是什么意思
 
-Users no longer need separate skill installs for:
+现在用户不需要再单独安装这些常见专项 skill：
 
 - `planning-with-files`
 - `ui-ux-pro-max`
@@ -69,18 +69,18 @@ Users no longer need separate skill installs for:
 - `gh-address-comments`
 - `brooks-review`
 
-Some routes still rely on normal runtime tools when they are actually used, for example:
+当然，某些路由在真正执行时仍然依赖正常的本地运行环境，例如：
 
-- Python for script-backed skills
-- `gh` authentication for GitHub workflows
-- Playwright or local dev servers for browser testing flows
+- Python：用于脚本型 skill
+- `gh`：用于 GitHub PR / CI 流程
+- Playwright 或本地开发服务器：用于浏览器测试与本地 Web QA
 
-Those are workflow/runtime prerequisites, not additional skill package installs.
+这些属于运行时前提，不属于额外的 skill 安装依赖。
 
-## Licensing
+## 许可证
 
-This repository now bundles third-party skill content under their included license files.
+当前仓库已经包含第三方打包 skill 的许可证文件。
 
-- Third-party attribution: [docs/third-party.md](./docs/third-party.md)
-- Root repository license: [LICENSE](./LICENSE)
-- License notes: [LICENSE-NOTICE.md](./LICENSE-NOTICE.md)
+- 第三方来源与归属说明：[docs/third-party.md](./docs/third-party.md)
+- 仓库顶层许可证：[LICENSE](./LICENSE)
+- 许可补充说明：[LICENSE-NOTICE.md](./LICENSE-NOTICE.md)
