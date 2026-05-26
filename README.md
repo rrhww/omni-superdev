@@ -1,30 +1,65 @@
 # Omni SuperDev
 
-Omni SuperDev 是一套面向全流程软件与产品开发的自包含 skill suite。
+Omni SuperDev 是一个独立的全流程研发 skill。
 
-它基于 `Superpowers` 的工程纪律模型改造而来，但发布形态不是“主 skill + 一堆额外依赖”的方式，而是直接打包成一套可安装、可分发的完整技能集合，用户不需要再单独安装常见 companion skills。
+它基于 `Superpowers` 的工程纪律模型改造而来，并把 `Superpowers` 全量内容与常用研发 companion 能力整合进 `skills/omni-superdev/` 这一个 skill 目录中。用户安装 Omni SuperDev 后，不需要再额外安装 `Superpowers` 或其它 companion skills 才能跑完整链路。
 
 ## 定位
 
-你可以把这套 skill 理解成：
+Omni SuperDev 本身就是一套从产品意图到技术方案、实现、测试、评审、验证、收口的完整研发流程。
 
-- `omni-superdev` 负责总流程路由
-- `omni-tdd`、`omni-debug`、`omni-verify`、`omni-file-planning` 提供套件自带的轻量纪律层
-- 已打包的专项 skills 负责补足 UI/UX、本地 Web 测试、MCP、PR/CI、代码评审、持久化规划等能力
+核心能力包括：
 
-这让 Omni SuperDev 很适合作为软件与产品工作的默认入口，尤其适用于可能横跨后端、前端、UI、测试、PR/CI、MCP 的混合型任务。
+- 产品发现、需求澄清、方案设计
+- 技术计划、任务拆分、持久化规划
+- TDD 行为变更与 bugfix
+- 根因导向调试
+- UI/UX、本地 Web QA、MCP、GitHub PR/CI、代码评审
+- 完成前验证与分支收口
+- skill 编写与维护方法
 
-## 已内置 Skills
+## 安装
 
-核心 Omni skills：
+只需要安装这一个目录：
 
-- `omni-superdev`
-- `omni-tdd`
-- `omni-debug`
-- `omni-verify`
-- `omni-file-planning`
+```text
+skills/
+  omni-superdev/
+```
 
-已打包的专项 skills：
+仓库中真正用于分发的目录是 [`skills/omni-superdev`](./skills/omni-superdev)。
+
+安装时把 `skills/omni-superdev/` 放到 Codex 可发现的 skills 目录中即可，例如：
+
+- `~/.agents/skills/omni-superdev/`
+- 你当前环境支持的项目级或个人级 skills 目录
+
+## 内置内容
+
+Omni SuperDev 的内置资料位于：
+
+```text
+skills/omni-superdev/references/bundled/
+```
+
+其中完整保留了 `Superpowers` 的 14 个 skill 内容：
+
+- `brainstorming`
+- `dispatching-parallel-agents`
+- `executing-plans`
+- `finishing-a-development-branch`
+- `receiving-code-review`
+- `requesting-code-review`
+- `subagent-driven-development`
+- `systematic-debugging`
+- `test-driven-development`
+- `using-git-worktrees`
+- `using-superpowers`
+- `verification-before-completion`
+- `writing-plans`
+- `writing-skills`
+
+同时内置了这些 companion 能力：
 
 - `planning-with-files`
 - `ui-ux-pro-max`
@@ -35,51 +70,30 @@ Omni SuperDev 是一套面向全流程软件与产品开发的自包含 skill su
 - `brooks-review`
 - `_shared`（`brooks-review` 依赖的支持文件）
 
-## 典型路由方式
+## 使用方式
 
-- 小任务：查看、修改、验证、总结
-- 标准开发：澄清产品目标，梳理技术方案，对行为变更走 TDD，再实现、收敛、验证
-- 复杂任务或跨会话任务：先做持久化规划，再按阶段推进
-- 调试或测试失败：先做根因导向的调试，再决定修复方案
-- UI/UX：路由到 `ui-ux-pro-max`
-- 本地 Web QA：路由到 `webapp-testing`
-- MCP 工作流：路由到 `mcp-builder`
-- PR / CI 工作流：路由到 `gh-fix-ci`、`gh-address-comments` 或 `brooks-review`
+用户只需要触发 `omni-superdev`。当流程需要更细的纪律或专项能力时，Omni SuperDev 会读取自己目录下的内置参考资料并执行对应流程，而不是要求用户另装其它 skill。
 
-## 安装方式
+典型链路：
 
-详见 [docs/install.md](./docs/install.md)。
+- 新功能：产品发现 → 方案设计 → 技术计划 → TDD 实现 → 评审 → 验证
+- Bug 修复：复现 → 根因调查 → 回归测试 → 最小修复 → 验证
+- UI 工作：需求与交互确认 → UI/UX 指南 → 本地 Web QA → 验证
+- PR/CI：检查失败原因 → 技术判断 → 修复 → 复验 → 回应评论
 
-简而言之，把当前仓库中的 [`skills/`](./skills) 目录内容整体复制到 Codex 可发现的 skills 目录中，并保留原有目录结构。
+## 运行时前提
 
-常见安装位置：
+某些内置流程在真正执行时仍然需要常规本地工具，例如：
 
-- `~/.agents/skills/`
-- 你当前环境支持的项目级或个人级 skills 目录
-
-## “不需要额外安装” 是什么意思
-
-现在用户不需要再单独安装这些常见专项 skill：
-
-- `planning-with-files`
-- `ui-ux-pro-max`
-- `webapp-testing`
-- `mcp-builder`
-- `gh-fix-ci`
-- `gh-address-comments`
-- `brooks-review`
-
-当然，某些路由在真正执行时仍然依赖正常的本地运行环境，例如：
-
-- Python：用于脚本型 skill
+- Python：用于脚本型流程
 - `gh`：用于 GitHub PR / CI 流程
-- Playwright 或本地开发服务器：用于浏览器测试与本地 Web QA
+- Playwright 与本地开发服务器：用于浏览器测试和本地 Web QA
 
-这些属于运行时前提，不属于额外的 skill 安装依赖。
+这些是运行时工具，不是额外 skill 安装依赖。
 
 ## 许可证
 
-当前仓库已经包含第三方打包 skill 的许可证文件。
+当前仓库已经包含第三方打包内容的许可证说明。
 
 - 第三方来源与归属说明：[docs/third-party.md](./docs/third-party.md)
 - 仓库顶层许可证：[LICENSE](./LICENSE)

@@ -1,36 +1,56 @@
 ---
 name: omni-superdev
-description: Use when the user wants an all-in-one product development flow, 全能超人, omni-superdev, end-to-end delivery, product-to-technical-plan-to-implementation-to-test, 产品开发链路, 产品-技术方案-实现-测试, or asks Codex to build, fix, ship, review, test, design, or coordinate a software/product task where workflow routing matters.
+description: Use when the user wants an independent all-in-one software/product development workflow skill, 全能超人, Omni SuperDev, end-to-end delivery, product-to-technical-plan-to-implementation-to-test, 产品开发链路, 产品-技术方案-实现-测试, or asks Codex to build, fix, ship, review, test, design, debug, or coordinate a mixed software task.
 ---
 
 # Omni SuperDev
 
-Act as the routing layer for end-to-end product development. Use one clear entry point, then delegate to narrower skills only when their specialty is needed.
+Act as a self-contained end-to-end product and software development workflow.
 
-This suite is based on and adapted from the Superpowers discipline model, but it is packaged as a self-contained suite.
+Omni SuperDev is based on and adapted from the Superpowers workflow model, but it is packaged as one independent skill. Its full workflow content and companion references live inside this skill directory under `references/bundled/`, so a user who installs only `omni-superdev/` still gets the complete development process.
 
-This suite includes its own lightweight core execution companions:
+## Core Principle
 
-- `omni-tdd`
-- `omni-debug`
-- `omni-verify`
-- `omni-file-planning`
+Omni SuperDev owns the full workflow.
 
-This suite also bundles the main specialty companions that used to require separate installs:
+Preserve the full discipline of the bundled Superpowers-derived modules:
 
-- `planning-with-files`
-- `ui-ux-pro-max`
-- `webapp-testing`
-- `mcp-builder`
-- `gh-fix-ci`
-- `gh-address-comments`
-- `brooks-review`
+- Product discovery before creative implementation
+- Written design before non-trivial code
+- Test-first behavior changes
+- Root-cause-first debugging
+- Evidence before completion claims
+- Review before merge or release
+- Durable planning for long or multi-phase work
+- UI, web QA, MCP, PR/CI, and code review support from the bundled companion references
 
-Prefer the built-in Omni discipline skills for default control flow, and use the bundled specialty skills when their domain is needed.
+Do not weaken these into quick summaries. When a task needs a detailed procedure, read the matching internal reference in `references/bundled/<module>/SKILL.md` and follow it as part of Omni SuperDev.
 
-## Core Rule
+Resolve every `references/bundled/...` path relative to the installed `omni-superdev/` skill directory, not relative to the user's project root. When running bundled scripts, use the actual installed path to this skill directory.
 
-Classify first, then choose the lightest sufficient workflow. Do not stack multiple process skills by default.
+## Internal Modules
+
+Use these bundled references as Omni SuperDev's internal playbooks, not as external install requirements:
+
+| Need | Internal reference |
+| --- | --- |
+| Product discovery, requirements, design approval | `references/bundled/brainstorming/SKILL.md` |
+| Worktree isolation | `references/bundled/using-git-worktrees/SKILL.md` |
+| Implementation planning | `references/bundled/writing-plans/SKILL.md` |
+| Task-by-task execution | `references/bundled/subagent-driven-development/SKILL.md` or `references/bundled/executing-plans/SKILL.md` |
+| Feature or bugfix implementation | `references/bundled/test-driven-development/SKILL.md` |
+| Debugging and failing tests | `references/bundled/systematic-debugging/SKILL.md` |
+| Parallel independent investigations | `references/bundled/dispatching-parallel-agents/SKILL.md` |
+| Code review feedback | `references/bundled/receiving-code-review/SKILL.md` |
+| Pre-merge review | `references/bundled/requesting-code-review/SKILL.md` |
+| Completion and release readiness | `references/bundled/verification-before-completion/SKILL.md` and `references/bundled/finishing-a-development-branch/SKILL.md` |
+| Long-running file-backed planning | `references/bundled/planning-with-files/SKILL.md` |
+| UI/UX implementation or review | `references/bundled/ui-ux-pro-max/SKILL.md` |
+| Local web app QA | `references/bundled/webapp-testing/SKILL.md` |
+| MCP server work | `references/bundled/mcp-builder/SKILL.md` |
+| GitHub CI or PR comments | `references/bundled/gh-fix-ci/SKILL.md` or `references/bundled/gh-address-comments/SKILL.md` |
+| Code review heuristics | `references/bundled/brooks-review/SKILL.md` |
+| Skill authoring | `references/bundled/writing-skills/SKILL.md` |
 
 ## Intake
 
@@ -44,22 +64,27 @@ Before changing files, ground in the repo and identify:
 
 Ask the user only when intent or tradeoffs cannot be discovered from local context.
 
-## Workflow Router
+## Workflow
 
-Read `references/workflow-map.md` when the task type is unclear or mixed.
+Read `references/workflow-map.md` when the task type is unclear or mixed. Treat that map as Omni SuperDev's own workflow map.
 
-- **Small task:** inspect, patch, run narrow verification, summarize.
-- **Standard development:** clarify product intent, sketch technical approach, use `omni-tdd` for behavior changes, implement, simplify, verify with `omni-verify`.
-- **Complex or multi-session:** use `planning-with-files` for full persisted task state, or `omni-file-planning` for a lighter in-suite version, then follow the standard flow in phases.
-- **Debug/failing tests:** use `omni-debug` before proposing fixes.
-- **New feature or bugfix:** use `omni-tdd` unless the task is config/docs-only or the user explicitly waives TDD.
-- **UI/UX:** use `ui-ux-pro-max` for visual, layout, interaction, accessibility, or product-surface design.
-- **Local web QA:** use `webapp-testing`; use `playwright` only for generic browser automation.
-- **MCP server:** use `mcp-builder`.
-- **PR/CI:** use `gh-fix-ci`, `gh-address-comments`, or `brooks-review` based on whether the task is failed checks, review comments, or code review.
-- **Artifact/deck/design asset:** prefer built-in document/presentation skills; consider Open Design only as an optional external design library, not a default dependency.
+1. Discover: understand repo context, user goal, constraints, audience, and success criteria.
+2. Design: for creative or non-trivial work, shape requirements and present an approvable design before implementation.
+3. Plan: write an implementation plan for multi-step work, including tests, files, risks, and verification.
+4. Implement: use test-first development for features, bug fixes, refactors, and behavior changes.
+5. Debug: when behavior is broken or surprising, complete root-cause investigation before changing code.
+6. Review: apply code review, UI/UX review, PR/CI handling, or MCP guidance as needed by the work surface.
+7. Verify: run fresh relevant checks before claiming completion.
+8. Finish: summarize changes, evidence, skipped checks, and remaining risks; use branch finishing guidance when preparing merge or release.
 
-If a routed specialty skill is unavailable, treat that as an incomplete suite install or packaging issue before treating it as a missing external dependency.
+## Discipline Gates
+
+- Creative implementation requires a design first. For detailed pressure-tested rules, read `references/bundled/brainstorming/SKILL.md`.
+- Behavior-changing implementation requires TDD. For the full RED-GREEN-REFACTOR discipline, read `references/bundled/test-driven-development/SKILL.md`.
+- Bugs and failing tests require root-cause-first debugging. For the full process, read `references/bundled/systematic-debugging/SKILL.md`.
+- Completion claims require fresh verification evidence. For the full gate, read `references/bundled/verification-before-completion/SKILL.md`.
+- Review comments require technical evaluation before implementation. For the full pattern, read `references/bundled/receiving-code-review/SKILL.md`.
+- Large or resumable tasks require durable planning. For file-backed planning, read `references/bundled/planning-with-files/SKILL.md`.
 
 ## Role Lens
 
@@ -71,21 +96,21 @@ For non-trivial tasks, check the plan from five views:
 - QA: test cases, regression risk, acceptance checks
 - Designer: interaction, clarity, accessibility, visual fit when UI/artifacts are involved
 
-These are thinking lenses, not automatic subagents. Use real subagents only when the user asks for parallel agent work or the task naturally splits into independent workstreams.
+These are thinking lenses, not automatic subagents. Use real subagents only when the work naturally splits into independent domains and the environment supports it.
 
 ## Conflict Policy
 
-Read `references/conflict-policy.md` before combining multiple broad workflow skills.
+Read `references/conflict-policy.md` before combining multiple broad workflow modules.
 
 - User instructions win.
 - Repo/project instructions win over global habits.
-- Omni SuperDev routes; narrow skills execute.
-- Built-in Omni suite skills provide the default discipline layer for this suite, while bundled specialty skills provide deeper domain coverage.
-- Prefer one primary workflow plus targeted specialty skills.
+- Omni SuperDev owns the flow; bundled references deepen the flow.
+- Prefer one primary path plus targeted internal modules.
+- If an internal reference uses legacy phrases such as "invoke skill", interpret that as "read and follow this bundled reference as part of Omni SuperDev."
 
 ## Completion Gate
 
-Before claiming completion, use `omni-verify`.
+Before claiming completion, apply the evidence gate from `references/bundled/verification-before-completion/SKILL.md`.
 
 Report:
 

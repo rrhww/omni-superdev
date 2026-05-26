@@ -1,7 +1,7 @@
 interface:
   display_name: "Omni SuperDev"
-  short_description: "Unified product-to-test delivery flow"
-  default_prompt: "Use $omni-superdev to take this from product intent through technical design, implementation, and verification."
+  short_description: "Independent full-cycle R&D workflow"
+  default_prompt: "Use $omni-superdev to take this from product intent through technical design, implementation, testing, review, and verification."
 
 policy:
   allow_implicit_invocation: true
