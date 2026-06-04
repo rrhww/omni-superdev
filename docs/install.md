@@ -30,7 +30,9 @@ skills/omni-superdev/references/bundled/
 
 - 完整保留的 `Superpowers` 全量流程内容
 - 产品发现、技术计划、TDD、调试、验证、评审、分支收口
-- 持久化规划、UI/UX、本地 Web QA、MCP、GitHub PR/CI、代码评审等 companion 能力
+- 持久化规划、UI/UX、本地 Web QA、通用 Playwright、交互式浏览器/Electron 调试、系统截图
+- MCP、Codex 迁移、GitHub PR/CI、代码评审、健康评估、测试质量评估
+- 安全最佳实践、威胁建模、安全所有权图、Notebook、研发自动化矩阵
 
 ## 运行时前提
 
@@ -38,6 +40,7 @@ skills/omni-superdev/references/bundled/
 
 - Python：用于脚本型流程
 - `gh`：用于 GitHub PR / CI 流程
-- Playwright 与本地开发服务器：用于浏览器测试和本地 Web QA
+- Node/npm、Playwright 与本地开发服务器：用于浏览器自动化、本地 Web QA、交互式调试
+- `networkx`：用于安全所有权图分析
 
 这些属于运行时前提，不属于额外 skill 安装依赖。

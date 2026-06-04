@@ -4,7 +4,7 @@
 
 ## 定位
 
-`Omni SuperDev` 是一个基于 `Superpowers` 思路改造出来的全流程研发 skill。
+`Omni SuperDev` 是一个基于 `Superpowers` 思路改造出来的全流程研发自动化 skill。
 
 它的发布形态是一个独立目录：
 
@@ -12,7 +12,7 @@
 skills/omni-superdev/
 ```
 
-`Superpowers` 全量内容与常用 companion 能力已经整合进这个目录的 `references/bundled/` 下。用户安装 `omni-superdev/` 后，不需要再单独安装 `Superpowers`、`planning-with-files`、`ui-ux-pro-max`、`webapp-testing`、`mcp-builder`、`gh-fix-ci`、`gh-address-comments` 或 `brooks-review`。
+`Superpowers` 全量内容、常用 companion 能力与扩展研发自动化模块已经整合进这个目录的 `references/bundled/` 下。用户安装 `omni-superdev/` 后，不需要再单独安装 `Superpowers`、`planning-with-files`、`ui-ux-pro-max`、`webapp-testing`、`mcp-builder`、`gh-fix-ci`、`gh-address-comments`、`brooks-review`、`brooks-health`、`brooks-test`、`playwright`、`playwright-interactive`、`screenshot`、`migrate-to-codex`、`security-best-practices`、`security-threat-model`、`security-ownership-map` 或 `jupyter-notebook`。
 
 ## 包内内容
 
@@ -20,6 +20,7 @@ skills/omni-superdev/
 
 - `skills/omni-superdev/SKILL.md`
 - `skills/omni-superdev/agents/openai.yaml`
+- `skills/omni-superdev/references/automation-matrix.md`
 - `skills/omni-superdev/references/workflow-map.md`
 - `skills/omni-superdev/references/conflict-policy.md`
 
@@ -45,11 +46,28 @@ skills/omni-superdev/
 - `skills/omni-superdev/references/bundled/planning-with-files/`
 - `skills/omni-superdev/references/bundled/ui-ux-pro-max/`
 - `skills/omni-superdev/references/bundled/webapp-testing/`
+- `skills/omni-superdev/references/bundled/playwright/`
+- `skills/omni-superdev/references/bundled/playwright-interactive/`
+- `skills/omni-superdev/references/bundled/screenshot/`
 - `skills/omni-superdev/references/bundled/mcp-builder/`
+- `skills/omni-superdev/references/bundled/migrate-to-codex/`
 - `skills/omni-superdev/references/bundled/gh-fix-ci/`
 - `skills/omni-superdev/references/bundled/gh-address-comments/`
 - `skills/omni-superdev/references/bundled/brooks-review/`
+- `skills/omni-superdev/references/bundled/brooks-health/`
+- `skills/omni-superdev/references/bundled/brooks-test/`
+- `skills/omni-superdev/references/bundled/security-best-practices/`
+- `skills/omni-superdev/references/bundled/security-threat-model/`
+- `skills/omni-superdev/references/bundled/security-ownership-map/`
+- `skills/omni-superdev/references/bundled/jupyter-notebook/`
 - `skills/omni-superdev/references/bundled/_shared/`
+
+Omni 原生自动化能力：
+
+- 代码库侦察与风险面识别
+- 实现后简化
+- 发布说明/变更日志整理
+- 不能公开分发的本地辅助 skill 对应能力边界说明
 
 ## 适用场景
 
@@ -60,7 +78,8 @@ skills/omni-superdev/
 - 端到端交付
 - 产品需求到技术方案到实现到测试的完整链路
 - 前后端混合任务
-- UI、MCP、PR、CI、代码评审等统一研发流程
+- UI、MCP、PR、CI、代码评审、安全、质量、浏览器自动化、迁移、Notebook 等统一研发流程
+- 发布准备、变更日志、分支收口
 - skill 编写与维护
 
 ## 安装方式

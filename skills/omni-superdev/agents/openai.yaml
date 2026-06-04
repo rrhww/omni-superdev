@@ -1,7 +1,7 @@
 interface:
   display_name: "Omni SuperDev"
-  short_description: "Independent full-cycle R&D workflow"
-  default_prompt: "Use $omni-superdev to take this from product intent through technical design, implementation, testing, review, and verification."
+  short_description: "Independent full-cycle R&D automation"
+  default_prompt: "Use $omni-superdev to take this through repo recon, product intent, technical design, implementation, testing, security, review, release notes, and verification."
 
 policy:
   allow_implicit_invocation: true
