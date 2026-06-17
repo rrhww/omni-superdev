@@ -1,16 +1,19 @@
 # Omni SuperDev Workflow Map
 
-Use this map when a request could need more than one internal Omni SuperDev module. Internal modules live under `references/bundled/` and are part of this skill, not separate installation requirements.
+Use this map when a request could need more than one Omni SuperDev capability or operating mode. Treat it as guidance for balanced execution inside `omni-superdev`, not as a replacement for senior judgment.
 
 For the full R&D automation matrix, read `references/automation-matrix.md`.
 
 ## Task Size
 
-| Situation | Default route |
+| Situation | Default approach |
 | --- | --- |
 | One obvious localized edit | Small task path: inspect, edit, verify |
-| New user-visible behavior | Repo recon → discovery/design → planning → TDD implementation → targeted hardening → fresh verification |
-| Multiple subsystems or cross-session work | Repo recon → discovery/design → file-backed planning → phased execution |
+| New user-visible behavior | Direct delivery: product intent → design if needed → TDD implementation → targeted hardening → fresh verification |
+| Multiple subsystems or cross-session work | Enter `persistent-planning` mode and phase the work using `omni-superdev` planning assets |
+| User wants a written implementation plan | Enter `plan-authoring` mode |
+| User already has a written plan to carry out | Enter `plan-execution` mode |
+| Written plan with mostly independent tasks in this session | Escalate from `plan-execution` to `same-session delegated execution` mode |
 | Bug, failing test, unexpected behavior | Root-cause debugging, then TDD regression coverage if code changes |
 | Multiple independent failures or task slices | Parallel investigation when there is no shared state or sequencing dependency |
 | Review feedback arrived and needs evaluation before implementation | Verify feedback against codebase, then implement one item at a time |
@@ -18,7 +21,7 @@ For the full R&D automation matrix, read `references/automation-matrix.md`.
 | Security-sensitive work | Secure-by-default review; add threat modeling or ownership mapping when explicitly requested |
 | Migration into Codex | Migration intake → dry run → migrate → validate generated Codex artifacts |
 
-## Surface Routing
+## Surface Guidance
 
 | Surface | Use |
 | --- | --- |
@@ -48,23 +51,18 @@ For the full R&D automation matrix, read `references/automation-matrix.md`.
 
 For standard feature work:
 
-1. Repo recon and automation staging: `references/automation-matrix.md`
-2. Product intent and design: `references/bundled/brainstorming/SKILL.md`
-3. Implementation planning: `references/bundled/writing-plans/SKILL.md`
-4. Workspace isolation when appropriate: `references/bundled/using-git-worktrees/SKILL.md`
-5. Implementation execution: `references/bundled/subagent-driven-development/SKILL.md` or `references/bundled/executing-plans/SKILL.md`
-6. Behavior changes: `references/bundled/test-driven-development/SKILL.md`
-7. Surface-specific hardening: UI, browser, MCP, security, test-quality, PR/CI, or notebook modules as needed
-8. Review and completion: `references/bundled/requesting-code-review/SKILL.md`, `references/bundled/verification-before-completion/SKILL.md`, and `references/bundled/finishing-a-development-branch/SKILL.md`
+1. Product intent and design when needed.
+2. Technical approach and file boundaries.
+3. Direct delivery or a plan mode depending on task shape.
+4. TDD for behavior changes.
+5. Surface-specific hardening only where risk warrants it.
+6. Fresh verification before any completion claim.
 
-## Full Bundle Notes
+## Process Hierarchy
 
-This skill intentionally preserves `using-superpowers` and `writing-skills` alongside the execution-oriented workflow references.
+Use this hierarchy consistently:
 
-They are not the default path for every task, but they are part of the full bundled Superpowers content and should not be omitted when packaging or installing `omni-superdev/`.
-
-The package also includes expanded R&D automation modules for migration, Playwright automation, interactive UI debugging, screenshots, notebooks, security, codebase health, and test quality. These are internal references, not extra skills to install.
-
-## Artifact Boundary
-
-Do not require external design, PDF, writing, or changelog skills. If a requested artifact does not have a bundled module, use `references/automation-matrix.md` and normal project tooling to produce it as part of Omni SuperDev.
+- `omni-superdev` owns end-to-end process control and mode selection.
+- Discipline modules under `references/bundled/` enforce rigor gates.
+- Domain modules under `references/bundled/` provide specialty execution tools.
+- Legacy process modules under `references/bundled/` exist only as deprecated compatibility shims.
