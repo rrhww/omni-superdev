@@ -1,7 +1,7 @@
 interface:
   display_name: "Omni SuperDev"
-  short_description: "Independent full-cycle R&D automation"
-  default_prompt: "Use $omni-superdev to take this through repo recon, product intent, technical design, implementation, testing, security, review, release notes, and verification."
+  short_description: "Single end-to-end engineering mode"
+  default_prompt: "Use $omni-superdev as the single end-to-end engineering mode across discovery, planning, implementation, debugging, testing, UX, security, review, and delivery."
 
 policy:
   allow_implicit_invocation: true

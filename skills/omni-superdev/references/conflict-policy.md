@@ -7,57 +7,49 @@ Use this when multiple Omni SuperDev internal modules appear relevant.
 1. Explicit user instruction in the current turn
 2. Repository/project instructions
 3. Safety, data protection, and verification requirements
-4. Omni SuperDev workflow decision
-5. Internal specialty references
-6. General style preferences
+4. Omni SuperDev integrated judgment
+5. Discipline modules
+6. Internal specialty references
+7. General style preferences
 
-## Workflow Rules
+## Coordination Rules
 
 - Use one broad workflow path at a time.
+- Keep `omni-superdev` as the only primary process entrypoint for software/product work.
+- Treat legacy process modules as deprecated compatibility shims, not competing workflow controllers.
 - Use internal references for domain execution, not for competing process control.
-- Do not use file-backed planning merely because a task has several tool calls; use it for long, complex, or resumable work.
+- Do not let persistent planning, plan authoring, or plan execution appear as separate skill identities when `omni-superdev` can own the mode directly.
 - Do not use UI/design guidance for backend-only or non-visual changes.
 - Do not let writing-polish guidance affect normal engineering conversation unless explicitly requested.
 - Do not use real subagents unless the user asks for agents/parallel work or independent task slices make them clearly useful and allowed.
-- Do not treat bundled references as separate installed skills; they are internal playbooks inside Omni SuperDev.
 - Do not require external artifact skills when an Omni-native automation pass can do the job.
 
 ## Superpowers Relationship
 
-Superpowers inspired the engineering discipline model behind this skill, and Omni SuperDev is explicitly based on that model.
+Bundled references remain the rigor and specialty layer inside `omni-superdev`.
 
-The intent of this package is to preserve that discipline inside one independent skill so users do not need a separate Superpowers install to get the normal Omni flow.
+Use discipline modules such as:
 
-This skill bundles the full-strength workflow backbone directly under `references/bundled/`, including:
+- `references/bundled/systematic-debugging/SKILL.md`
+- `references/bundled/test-driven-development/SKILL.md`
+- `references/bundled/verification-before-completion/SKILL.md`
 
-- `brainstorming`
-- `dispatching-parallel-agents`
-- `executing-plans`
-- `finishing-a-development-branch`
-- `receiving-code-review`
-- `requesting-code-review`
-- `subagent-driven-development`
-- `systematic-debugging`
-- `test-driven-development`
-- `using-git-worktrees`
-- `using-superpowers`
-- `verification-before-completion`
-- `writing-plans`
-- `writing-skills`
+Use domain modules only for specialty execution. Keep overall responsibility for sequencing and quality in `omni-superdev`.
 
-It also bundles specialty companion references such as `planning-with-files`, `ui-ux-pro-max`, `webapp-testing`, `mcp-builder`, `gh-fix-ci`, `gh-address-comments`, `brooks-review`, `brooks-health`, `brooks-test`, `migrate-to-codex`, `playwright`, `playwright-interactive`, `screenshot`, `jupyter-notebook`, `security-best-practices`, `security-threat-model`, and `security-ownership-map`.
+## Legacy Process Modules
 
-Omni SuperDev decides when those disciplines apply and keeps them as one coherent workflow.
+These bundled modules are no longer first-class process entrypoints:
 
-`using-superpowers` is preserved as upstream content inside the bundle. For this package, `omni-superdev` is the installed first entry point.
+- `references/bundled/planning-with-files/SKILL.md`
+- `references/bundled/writing-plans/SKILL.md`
+- `references/bundled/executing-plans/SKILL.md`
+- `references/bundled/subagent-driven-development/SKILL.md`
 
-If an upstream reference says "invoke skill" or names an upstream module, interpret it as "read and follow the corresponding file under `references/bundled/<name>/`."
+Keep them on disk for compatibility and migration, but treat `omni-superdev` as the canonical owner of those capabilities.
 
 ## Automation Relationship
 
-`references/automation-matrix.md` is Omni SuperDev's native R&D automation map. Use it for repo recon, post-implementation simplification, changelog/release-note drafting, and artifact boundaries that are not safe to bundle as third-party skills.
-
-When a bundled module and the automation matrix both apply, use the bundled module for detailed execution and the matrix for sequencing.
+`references/automation-matrix.md` is Omni SuperDev's native automation map. Use it for sequencing and native passes that are not better expressed as a bundled specialty module.
 
 ## Tie Breakers
 
